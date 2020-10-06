@@ -1,4 +1,8 @@
 all: dedup svgclean 
+xz:
+	XZ_DEFAULTS="-T0" tar -cvJf release.tar.xz Obsidian* LICENSE README.md logo.jpg
+zst:
+	tar --zstd -cvf release.tar.zst Obsidian* LICENSE README.md logo.jpg
 dedup_dryrun:
 	rdfind . 
 dedup:
